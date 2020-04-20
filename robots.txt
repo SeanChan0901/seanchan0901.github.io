@@ -63,4 +63,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://seanchan0901.github.io/sitemap.xml
+Sitemap: seanchan0901.com/sitemap.xml

@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 小羊Sean</title>
-    <link>https://seanchan0901.github.io/tags/</link>
+    <link>seanchan0901.com/tags/</link>
     <description>Recent content in Tags on 小羊Sean</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://seanchan0901.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="seanchan0901.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>binary tree</title>
-      <link>https://seanchan0901.github.io/tags/binary-tree/</link>
+      <link>seanchan0901.com/tags/binary-tree/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://seanchan0901.github.io/tags/binary-tree/</guid>
+      <guid>seanchan0901.com/tags/binary-tree/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Structures</title>
-      <link>https://seanchan0901.github.io/tags/data-structures/</link>
+      <link>seanchan0901.com/tags/data-structures/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://seanchan0901.github.io/tags/data-structures/</guid>
+      <guid>seanchan0901.com/tags/data-structures/</guid>
       <description></description>
     </item>
     
     <item>
       <title>union-find</title>
-      <link>https://seanchan0901.github.io/tags/union-find/</link>
+      <link>seanchan0901.com/tags/union-find/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://seanchan0901.github.io/tags/union-find/</guid>
+      <guid>seanchan0901.com/tags/union-find/</guid>
       <description></description>
     </item>
     
