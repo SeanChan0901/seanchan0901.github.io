@@ -426,7 +426,7 @@
 </li>
 <li>
 <p>从节点i到子树的每一个叶子都有一个衰减量，把这些衰减量的最大者记为 <code>degradeToLeaf(i)</code> ，特别的，当 $i$ 为叶子结点时，<code>degradeToLeaf(i) == 0</code> 。那么对于其他的非叶子节点 $i$， 其 <code>degradeToLeaf(i)</code> 可以这样描述（ $j$ 为 $i$ 的孩子）:</p>
-<p>$degradeToLeaf(i)=max\left{degradeToLeaf(j)+degradeFromParent(j)\right}$</p>
+<p>$degradeToLeaf(i)=max(degradeToLeaf(j)+degradeFromParent(j))$</p>
 </li>
 </ul>
 </li>
