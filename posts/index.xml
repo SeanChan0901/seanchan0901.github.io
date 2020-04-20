@@ -6,10 +6,25 @@
     <description>Recent content in Posts on 小羊Sean的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://seanchan0901.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>优先级队列 priority queue</title>
+      <link>https://seanchan0901.github.io/2020/priorityqueue/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://seanchan0901.github.io/2020/priorityqueue/</guid>
+      <description>优先级队列（priority queue） 优先级队列的定义 优先级队列 是一种特殊的队列，是0个或多个元素的集合，每个元素都有一个优先级或权值，对优先级队列执行的操作有：
+  查找一个元素 top
+  插入一个元素 push
+  删除一个元素 pop
+在 最大优先级队列（max priority queue） 里 pop 删除的是优先级最大的元素，在 最小优先级队（min priority queue） 列里 pop 删除的是优先级最小的元素。（元素可以有相同的优先级）。
+  优先级队列的描述 最大优先级队列的抽象数据类型描述如下（最小优先级队列也是同理）：
+// 优先级队列的抽象类 template &amp;lt;typename T&amp;gt; class maxPriorityQueue { public: virtual ~maxPriorityQueue(){}; virtual bool empty() const = 0; // 判断队列是否为空  virtual int size() const = 0; // 返回队列元素个数  virtual const T&amp;amp; top() const = 0; // 返回优先级最大的元素  virtual void pop() = 0; // 删除优先级最大的元素  virtual void push(const T&amp;amp; theElement) = 0; // 插入一个元素theElement }; 线性表 描述最大优先级队列最简单的方法是无序线性表。如果使用 数组 那么插入元素的时间性能为 $\Theta(1)$ ，删除操作必须从无序的n个元素中找到优先级最大的元素进行删除，时间性能为 $\Theta(n)$ 。 使用 链表 如果每次都在链表头进行插入那么那么插入元素的时间复杂度为 $\Theta(1)$ ，删除操作的时间性能为 $\Theta(n)$ 。</description>
+    </item>
     
     <item>
       <title>二叉树 bianry tree 详解与实现</title>
@@ -17,7 +32,7 @@
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://seanchan0901.github.io/2020/binarytree/</guid>
-      <description>二叉树（binaryTree）  一些关于树的基本概念 二叉树的定义 二叉树的特性 二叉树的描述  数组描述 链表描述   二叉树的常用操作 二叉树的遍历 二叉树链表描述的实现 二叉树的算法应用  信号放大器 并查集（union-find）      二叉树（binaryTree） 一些关于树的基本概念  一棵树的 高度（height） 或者 深度（depth） 是指树中级的个数。 一个 元素的度 是指其孩子的个数。 一棵树的度 是指其元素的度的最大值  二叉树的定义 一棵 二叉树（binary tree） $t$ 是有限个元素的集合（可以为空）。当二叉树非空时，其中有一个元素称为 根 ，余下的元素（如果有的话）被划分成两棵二叉树，分别称为 $t$ 的左子树和右子树。
+      <description>二叉树（binaryTree）  一些关于树的基本概念 二叉树的定义 二叉树的特性 二叉树的描述  数组描述 链表描述   二叉树的常用操作 二叉树的遍历 二叉树链表描述的实现 二叉树的算法应用  信号放大器 并查集（union-find）   参考文献以及源码    二叉树（binaryTree） 一些关于树的基本概念  一棵树的 高度（height） 或者 深度（depth） 是指树中级的个数。 一个 元素的度 是指其孩子的个数。 一棵树的度 是指其元素的度的最大值  二叉树的定义 一棵 二叉树（binary tree） $t$ 是有限个元素的集合（可以为空）。当二叉树非空时，其中有一个元素称为 根 ，余下的元素（如果有的话）被划分成两棵二叉树，分别称为 $t$ 的左子树和右子树。
 二叉树的特性   一棵二叉树有 $n$ 个元素，$n&amp;gt;0$，他有 $n-1$ 条边。
 二叉树的每一个元素（除了根节点）有且仅有一个父节点，在子节点与父节点间有且仅有一条边，因此边数为 $n-1$ 。
   一棵二叉树的高度为 $h$ ， $h&amp;gt;=0$ ，它最少有 $h$ 个元素，最多有 $2^h-1$ 个元素。</description>
