@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>union-find on 小羊Sean</title>
-    <link>seanchan0901.com/tags/union-find/</link>
+    <link>https://seanchan0901.github.io/tags/union-find/</link>
     <description>Recent content in union-find on 小羊Sean</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="seanchan0901.com/tags/union-find/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://seanchan0901.github.io/tags/union-find/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>二叉树 bianry tree 详解与实现</title>
-      <link>seanchan0901.com/2020/binarytree/</link>
+      <link>https://seanchan0901.github.io/2020/binarytree/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>seanchan0901.com/2020/binarytree/</guid>
+      <guid>https://seanchan0901.github.io/2020/binarytree/</guid>
       <description>二叉树（binaryTree）  一些关于树的基本概念 二叉树的定义 二叉树的特性 二叉树的描述  数组描述 链表描述   二叉树的常用操作 二叉树的遍历 二叉树链表描述的实现 二叉树的算法应用  信号放大器 并查集（union-find）      二叉树（binaryTree） 一些关于树的基本概念  一棵树的 高度（height） 或者 深度（depth） 是指树中级的个数。 一个 元素的度 是指其孩子的个数。 一棵树的度 是指其元素的度的最大值  二叉树的定义 一棵 二叉树（binary tree） $t$ 是有限个元素的集合（可以为空）。当二叉树非空时，其中有一个元素称为 根 ，余下的元素（如果有的话）被划分成两棵二叉树，分别称为 $t$ 的左子树和右子树。
 二叉树的特性   一棵二叉树有 $n$ 个元素，$n&amp;gt;0$，他有 $n-1$ 条边。
 二叉树的每一个元素（除了根节点）有且仅有一个父节点，在子节点与父节点间有且仅有一条边，因此边数为 $n-1$ 。
