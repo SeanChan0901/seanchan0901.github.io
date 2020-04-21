@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>schedule on 小羊Sean的blog</title>
-    <link>https://seanchan0901.github.io/tags/schedule/</link>
+    <link>https://seanchan0901.com/tags/schedule/</link>
     <description>Recent content in schedule on 小羊Sean的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://seanchan0901.github.io/tags/schedule/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://seanchan0901.com/tags/schedule/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>优先级队列 priority queue</title>
-      <link>https://seanchan0901.github.io/2020/priorityqueue/</link>
+      <link>https://seanchan0901.com/2020/priorityqueue/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://seanchan0901.github.io/2020/priorityqueue/</guid>
+      <guid>https://seanchan0901.com/2020/priorityqueue/</guid>
       <description>优先级队列（priority queue） 优先级队列的定义 优先级队列 是一种特殊的队列，是0个或多个元素的集合，每个元素都有一个优先级或权值，对优先级队列执行的操作有：
   查找一个元素 top
   插入一个元素 push
