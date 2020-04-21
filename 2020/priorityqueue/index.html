@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="小羊Sean">
+  <meta name="description" content="NEVER SETTEL">
+  
+  
+  <link rel="prev" href="seanchan0901.github.io/2020/binarytree/" />
+  
+  <link rel="canonical" href="seanchan0901.github.io/2020/priorityqueue/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           优先级队列 priority queue | 小羊Sean的blog
+       
+  </title>
+  <meta name="title" content="优先级队列 priority queue | 小羊Sean的blog">
+    
+  
+  <link rel="stylesheet" href="/seanchan0901.github.io/font/iconfont.css">
+  <link rel="stylesheet" href="/seanchan0901.github.io/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "seanchan0901.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "优先级队列 priority queue",
+    "headline" : "优先级队列 priority queue",
+    "description" : "优先级队列（priority queue） 优先级队列的定义 优先级队列 是一种特殊的队列，是0个或多个元素的集合，每个元素都有一个优先级或权值，对优先级队列执行的操作有：\n  查找一个元素 top\n  插入一个元素 push\n  删除一个元素 pop\n在 最大优先级队列（max priority queue） 里 pop 删除的是优先级最大的元素，在 最小优先级队（min priority queue） 列里 pop 删除的是优先级最小的元素。（元素可以有相同的优先级）。\n  优先级队列的描述 最大优先级队列的抽象数据类型描述如下（最小优先级队列也是同理）：\n\/\/ 优先级队列的抽象类 template \x26lt;typename T\x26gt; class maxPriorityQueue { public: virtual ~maxPriorityQueue(){}; virtual bool empty() const = 0; \/\/ 判断队列是否为空  virtual int size() const = 0; \/\/ 返回队列元素个数  virtual const T\x26amp; top() const = 0; \/\/ 返回优先级最大的元素  virtual void pop() = 0; \/\/ 删除优先级最大的元素  virtual void push(const T\x26amp; theElement) = 0; \/\/ 插入一个元素theElement }; 线性表 描述最大优先级队列最简单的方法是无序线性表。如果使用 数组 那么插入元素的时间性能为 $\\Theta(1)$ ，删除操作必须从无序的n个元素中找到优先级最大的元素进行删除，时间性能为 $\\Theta(n)$ 。 使用 链表 如果每次都在链表头进行插入那么那么插入元素的时间复杂度为 $\\Theta(1)$ ，删除操作的时间性能为 $\\Theta(n)$ 。",
+    "inLanguage" : "en-us",
+    "author" : "小羊Sean",
+    "creator" : "小羊Sean",
+    "publisher": "小羊Sean",
+    "accountablePerson" : "小羊Sean",
+    "copyrightHolder" : "小羊Sean",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-04-20 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2020-04-20 00:00:00 \x2b0000 UTC",
+    "url" : "seanchan0901.github.io\/2020\/priorityqueue\/",
+    "wordCount" : "117",
+    "keywords" : [ "Data Structures","heap","schedule", "小羊Sean的blog"]
+}
+</script>
+
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</head>
+
+  
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="seanchan0901.github.io">小羊Sean的blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="seanchan0901.github.io/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="seanchan0901.github.io/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="seanchan0901.github.io/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="seanchan0901.github.io/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="seanchan0901.github.io">小羊Sean的blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="seanchan0901.github.io/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="seanchan0901.github.io/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="seanchan0901.github.io/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="seanchan0901.github.io/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css"/>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">优先级队列 priority queue</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="seanchan0901.github.io" rel="author">小羊Sean</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-04-20 itemprop="datePublished">April 20, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="seanchan0901.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"> 数据结构 </a>
+                        
+                </span>
+                 | 200 
+                Words | Read in about 1 Mins | total reading : <span id="busuanzi_value_page_pv"></span>
+        </div>
+    </header>
+
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="优先级队列priority-queue">优先级队列（priority queue）</h1>
+<h2 id="优先级队列的定义">优先级队列的定义</h2>
+<p><strong>优先级队列</strong> 是一种特殊的队列，是0个或多个元素的集合，每个元素都有一个优先级或权值，对优先级队列执行的操作有：</p>
+<ol>
+<li>
+<p>查找一个元素 <code>top</code></p>
+</li>
+<li>
+<p>插入一个元素 <code>push</code></p>
+</li>
+<li>
+<p>删除一个元素 <code>pop</code></p>
+<p>在 <em><strong>最大优先级队列（max priority queue）</strong></em> 里 <code>pop</code> 删除的是优先级最大的元素，在 <em><strong>最小优先级队（min priority queue）</strong></em> 列里 <code>pop</code> 删除的是优先级最小的元素。（元素可以有相同的优先级）。</p>
+</li>
+</ol>
+<h2 id="优先级队列的描述">优先级队列的描述</h2>
+<p>最大优先级队列的抽象数据类型描述如下（最小优先级队列也是同理）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 优先级队列的抽象类
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">maxPriorityQueue</span> {
+ <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>maxPriorityQueue(){};  
+  <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>() <span style="color:#66d9ef">const</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// 判断队列是否为空
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">size</span>() <span style="color:#66d9ef">const</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// 返回队列元素个数
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> top() <span style="color:#66d9ef">const</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// 返回优先级最大的元素
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pop</span>() <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// 删除优先级最大的元素
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> theElement) <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// 插入一个元素theElement
+</span><span style="color:#75715e"></span>};
+</code></pre></div><h3 id="线性表">线性表</h3>
+<p>描述最大优先级队列最简单的方法是无序线性表。如果使用 <strong>数组</strong> 那么插入元素的时间性能为 $\Theta(1)$ ，删除操作必须从无序的n个元素中找到优先级最大的元素进行删除，时间性能为 $\Theta(n)$ 。
+使用 <em><strong>链表</strong></em> 如果每次都在链表头进行插入那么那么插入元素的时间复杂度为 $\Theta(1)$ ，删除操作的时间性能为 $\Theta(n)$ 。</p>
+<h3 id="堆">堆</h3>
+<h4 id="1-堆的定义">1. 堆的定义</h4>
+<p><strong>大根树（小根树）</strong> : 每个节点的值都大于（小于）或等于其叶子节点。</p>
+<p><strong>大根堆（小根堆）</strong> : 当一个大根树（小根树）是一棵完全二叉树的时候，称为大根堆（小根堆）。</p>
+<h4 id="2-堆的实现">2. 堆的实现</h4>
+<h3 id="左高树">左高树</h3>
+<h4 id="1-左高树的定义">1. 左高树的定义</h4>
+<h4 id="2-左高树的实现">2. 左高树的实现</h4>
+<h2 id="优先级队列的应用">优先级队列的应用</h2>
+<h3 id="堆排序heap-sort">堆排序（heap sort）</h3>
+<h3 id="机器调度machine-schedule">机器调度（machine schedule）</h3>
+<h3 id="霍夫曼编码huffman-code">霍夫曼编码（Huffman code）</h3>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>小羊Sean </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=seanchan0901.github.io/2020/priorityqueue/>seanchan0901.github.io/2020/priorityqueue/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明来源<a rel="license" href="https://seanchan0901.com" target="_blank"> 小羊Sean</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="seanchan0901.github.io/tags/data-structures/">
+                    #Data Structures</a></span>
+            
+            <span class="tag"><a href="seanchan0901.github.io/tags/heap/">
+                    #heap</a></span>
+            
+            <span class="tag"><a href="seanchan0901.github.io/tags/schedule/">
+                    #schedule</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="seanchan0901.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="seanchan0901.github.io/2020/binarytree/" class="prev" rel="prev" title="二叉树 bianry tree 详解与实现"><i class="iconfont icon-left"></i>&nbsp;二叉树 bianry tree 详解与实现</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+  new Valine({
+      el: '#vcomments' ,
+      appId: 'aIoQ1Lc6ML2oeJYA92Q58gf0-gzGzoHsz',
+      appKey: 'MqrNP4ET5Ak7C6gn87MNw25R',
+      notify: 'true', 
+      verify: 'true', 
+      avatar:'mm', 
+      placeholder: '说点什么吧...',
+      visitor: 'true'
+  });
+</script>
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="seanchan0901.github.io">小羊Sean</a> | </span> 
+         
+
+         
+        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+        <span id="busuanzi_container_site_pv">
+            | 本站访问量：<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            | 您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
+        </span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/seanchan0901.github.io/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js"
+integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" 
+crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js"
+integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe"
+crossorigin="anonymous"
+onload="renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+     </div>
+  </body>
+</html>
